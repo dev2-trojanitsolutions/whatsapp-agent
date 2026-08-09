@@ -1,0 +1,178 @@
+{
+  "company": "Trojan Technologies",
+  "location": "Doha, Qatar",
+  "about": "A reliable dealer of complete office automation solutions in Doha, Qatar, with 15+ years of experience. Authorized Canon & Ricoh printer supplier, also an authorized Dell partner.",
+  "productCategories": [
+    {
+      "category": "Printers & Copiers",
+      "items": [
+        {
+          "name": "Canon B/W Multifunctional Printers",
+          "bestFor": "Everyday black & white document printing, copying, scanning",
+          "priceBand": "Contact sales for a quote — depends on model and volume",
+          "notes": "Canon is an authorized brand line for Trojan Technologies."
+        },
+        {
+          "name": "Canon Color Multifunctional Printers",
+          "bestFor": "Offices needing color documents and light marketing print",
+          "priceBand": "Contact sales for a quote — depends on model and volume",
+          "notes": "Canon is an authorized brand line for Trojan Technologies."
+        },
+        {
+          "name": "Ricoh B/W Multifunctional Printers",
+          "bestFor": "Everyday black & white document printing, copying, scanning",
+          "priceBand": "Contact sales for a quote — depends on model and volume",
+          "notes": "Ricoh is an authorized brand line for Trojan Technologies."
+        },
+        {
+          "name": "Ricoh Color Multifunctional Printers",
+          "bestFor": "Offices needing color documents and light marketing print",
+          "priceBand": "Contact sales for a quote — depends on model and volume",
+          "notes": "Ricoh is an authorized brand line for Trojan Technologies."
+        },
+        {
+          "name": "Ricoh Refurbished Multifunctional Printers",
+          "bestFor": "Budget-conscious buyers who still want a reliable MFP",
+          "priceBand": "Contact sales for a quote",
+          "notes": "Refurbished units, tested and serviced before resale."
+        },
+        {
+          "name": "Toners & Supplies",
+          "bestFor": "Ongoing consumables for Canon and Ricoh printers",
+          "priceBand": "Contact sales for a quote",
+          "notes": "Genuine toners and supplies for existing printer fleets."
+        }
+      ]
+    },
+    {
+      "category": "Computers & IT Equipment",
+      "items": [
+        {
+          "name": "HP Desktops, Laptops, Monitors, Data Storage & Servers",
+          "bestFor": "Office computing needs across all sizes of business",
+          "priceBand": "Contact sales for a quote",
+          "notes": "HP is one of the brand lines carried."
+        },
+        {
+          "name": "Dell Desktops, Laptops, Monitors, Data Storage & Servers",
+          "bestFor": "Office computing needs across all sizes of business",
+          "priceBand": "Contact sales for a quote",
+          "notes": "Trojan Technologies is an authorized Dell partner."
+        },
+        {
+          "name": "Lenovo Desktops, Laptops, Monitors, Data Storage & Servers",
+          "bestFor": "Office computing needs across all sizes of business",
+          "priceBand": "Contact sales for a quote",
+          "notes": "Lenovo is one of the brand lines carried."
+        },
+        {
+          "name": "Refurbished Desktops & Laptops",
+          "bestFor": "Budget-conscious buyers",
+          "priceBand": "Contact sales for a quote",
+          "notes": "Tested and serviced before resale."
+        },
+        {
+          "name": "Computer Accessories",
+          "bestFor": "General office IT needs",
+          "priceBand": "Contact sales for a quote",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "category": "Software & Licenses",
+      "items": [
+        {
+          "name": "Microsoft Office 365",
+          "bestFor": "Office productivity software",
+          "priceBand": "Contact sales for a quote",
+          "notes": "Licensing and subscriptions."
+        },
+        {
+          "name": "Software Licenses & Subscriptions",
+          "bestFor": "General business software needs",
+          "priceBand": "Contact sales for a quote",
+          "notes": ""
+        },
+        {
+          "name": "Cheque Printing Software",
+          "bestFor": "Businesses that print cheques in-house",
+          "priceBand": "Contact sales for a quote",
+          "notes": ""
+        }
+      ]
+    }
+  ],
+  "servicePlans": [
+    {
+      "name": "Print Management Solutions",
+      "description": "Streamlines and optimizes printing tasks across an office or fleet, enhancing efficiency and reducing costs.",
+      "priceBand": "Contact sales for a quote"
+    },
+    {
+      "name": "IT AMC (Annual Maintenance Contract)",
+      "description": "Ongoing IT maintenance and support contract.",
+      "priceBand": "Contact sales for a quote"
+    },
+    {
+      "name": "Photocopier Repair Service",
+      "description": "Repair and servicing for photocopiers and multifunction printers.",
+      "priceBand": "Contact sales for a quote"
+    },
+    {
+      "name": "IT Support Engineer Services",
+      "description": "On-demand or contracted IT support engineers.",
+      "priceBand": "Contact sales for a quote"
+    },
+    {
+      "name": "Network Infrastructure Solutions",
+      "description": "Design and setup of office network infrastructure.",
+      "priceBand": "Contact sales for a quote"
+    },
+    {
+      "name": "Surveillance and Access Control",
+      "description": "CCTV surveillance and access control system installation.",
+      "priceBand": "Contact sales for a quote"
+    },
+    {
+      "name": "IP Telephony and Contact Center",
+      "description": "IP-based phone systems and contact center solutions.",
+      "priceBand": "Contact sales for a quote"
+    },
+    {
+      "name": "Cloud Solutions",
+      "description": "Cloud infrastructure and migration services.",
+      "priceBand": "Contact sales for a quote"
+    },
+    {
+      "name": "Rental Services",
+      "description": "Printer rentals, laptop/desktop rentals, IT equipment rentals, and corporate event rentals.",
+      "priceBand": "Contact sales for a quote"
+    }
+  ],
+  "contact": {
+    "address": "#790, Umm Al Dome Street, Building No 109, Doha, Qatar (next to Al-Meera)",
+    "sales": { "phone": "+974 3130 8006", "email": "sales@trojancopiers.com" },
+    "service": { "phone": "+974 6634 9499", "email": "support@trojancopiers.com" },
+    "it": { "phone": "+974 7059 9788", "email": "itadmin@trojancopiers.com" },
+    "support": "Online support available 24/7; technical support during working hours."
+  },
+  "faq": [
+    {
+      "question": "What is a multifunction printer?",
+      "answer": "A device that can print, copy, scan, and fax."
+    },
+    {
+      "question": "Laser or inkjet — which is better?",
+      "answer": "Laser printers are recommended for fast, cost-effective, high-volume printing. Inkjet printers are recommended for high-quality color prints."
+    },
+    {
+      "question": "Can I get an exact price over WhatsApp?",
+      "answer": "Pricing depends on configuration and volume, so exact quotes come from the sales team rather than the bot."
+    },
+    {
+      "question": "Do you only sell printers?",
+      "answer": "No — Trojan Technologies also sells computers and IT equipment (HP, Dell, Lenovo), software licenses, and offers IT support, network infrastructure, surveillance/access control, IP telephony, cloud solutions, and equipment rentals."
+    }
+  ]
+}
