@@ -19,6 +19,7 @@ export const env = {
   gemini: {
     apiKey: required("GEMINI_API_KEY"),
     model: process.env.GEMINI_MODEL ?? "gemini-3.1-flash-lite",
+    ttsModel: process.env.GEMINI_TTS_MODEL ?? "gemini-2.5-flash-preview-tts",
   },
 
   databaseUrl: required("DATABASE_URL"),

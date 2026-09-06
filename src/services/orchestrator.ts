@@ -9,9 +9,14 @@ import {
 import { isWithinBusinessHours } from "./businessHours";
 import { runAgent } from "./llm";
 import { handOffToSales } from "./salesHandoff";
-import { sendTextMessage } from "./whatsapp";
+import { sendTextMessage, sendAudioMessage, uploadMedia } from "./whatsapp";
+import { synthesizeSpeech } from "./textToSpeech";
 
-export async function handleBatchedTurn(fromPhone: string, batchedMessages: string[]): Promise<void> {
+export async function handleBatchedTurn(
+  fromPhone: string,
+  batchedMessages: string[],
+  wasVoice = false
+): Promise<void> {
   const { customer, isNew } = await findOrCreateCustomer(fromPhone);
   const conversation = await findOrCreateConversation(customer.id);
 
@@ -69,6 +74,18 @@ export async function handleBatchedTurn(fromPhone: string, batchedMessages: stri
       await new Promise((resolve) => setTimeout(resolve, 700));
     }
     await saveMessage(conversation.id, "outbound", replyParts[i]);
+
+    if (wasVoice) {
+      try {
+        const audio = await synthesizeSpeech(replyParts[i]);
+        const mediaId = await uploadMedia(audio, "audio/ogg", "reply.ogg");
+        await sendAudioMessage(fromPhone, mediaId);
+        continue;
+      } catch (err) {
+        console.error(`Failed to send voice reply to ${fromPhone}, falling back to text:`, err);
+      }
+    }
+
     await sendTextMessage(fromPhone, replyParts[i]);
   }
 }

@@ -1,6 +1,14 @@
 import { Router } from "express";
 import { env } from "../config/env";
-import { parseInboundMessages, sendTypingIndicator, verifyWebhookSignature } from "../services/whatsapp";
+import {
+  parseInboundMessages,
+  sendTypingIndicator,
+  sendTextMessage,
+  getMediaUrl,
+  downloadMedia,
+  verifyWebhookSignature,
+} from "../services/whatsapp";
+import { transcribeAudio } from "../services/speechToText";
 import { enqueueMessage } from "../services/debounceQueue";
 import { handleBatchedTurn } from "../services/orchestrator";
 
@@ -31,10 +39,38 @@ webhookRouter.post("/", async (req, res) => {
   const messages = parseInboundMessages(req.body);
   for (const message of messages) {
     await sendTypingIndicator(message.id);
-    await enqueueMessage(message.from, message.text, (conversationKey, batched) => {
-      handleBatchedTurn(conversationKey, batched).catch((err) =>
-        console.error(`Failed to handle turn for ${conversationKey}:`, err)
-      );
-    });
+
+    let text: string;
+    let isVoice = false;
+
+    if (message.type === "audio") {
+      try {
+        const { url, mimeType } = await getMediaUrl(message.mediaId!);
+        const audio = await downloadMedia(url);
+        text = await transcribeAudio(audio, mimeType);
+        isVoice = true;
+      } catch (err) {
+        console.error(`Failed to transcribe voice note from ${message.from}:`, err);
+        await sendTextMessage(message.from, "Sorry, I couldn't catch that voice note — could you type it instead?");
+        continue;
+      }
+      if (!text) {
+        await sendTextMessage(message.from, "Sorry, I couldn't catch that voice note — could you type it instead?");
+        continue;
+      }
+    } else {
+      text = message.text!;
+    }
+
+    await enqueueMessage(
+      message.from,
+      text,
+      (conversationKey, batched, wasVoice) => {
+        handleBatchedTurn(conversationKey, batched, wasVoice).catch((err) =>
+          console.error(`Failed to handle turn for ${conversationKey}:`, err)
+        );
+      },
+      isVoice
+    );
   }
 });
